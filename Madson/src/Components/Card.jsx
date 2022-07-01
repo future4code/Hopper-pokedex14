@@ -10,13 +10,22 @@ const Card = (props) => {
 
     const [pokemon, setPokemon] = useState({})
     const [img, setImg] = useState("")
+    const [name, setName] = useState("")
 
     const url = props.url
+
+    const formataNome = () => {
+        let nome = props.nome
+        const novoNome = nome.replace(/^./, nome[0].toUpperCase());
+        
+        setName(novoNome)
+    }
 
     useEffect(() => {
         axios.get(url).then((res) => {
             setPokemon(res.data)
             setImg(res.data.sprites.front_default)
+            formataNome()
         }).catch((err) => {
             console.log(err);
         })
@@ -24,11 +33,15 @@ const Card = (props) => {
 
     return (
         <div className="card">
-            <p>{props.nome}</p>
-            <img src={img} className="img"/>
-            <div>
-                <button>Adicionar ao Pokedex</button>
-                <button>Ver detalhes</button>
+            <p className="nomePokemon">{name}</p>
+            <div className="imgContainer">
+                <img src={img} className="img"/>
+            </div>
+            <div className="btnPokedexCont">
+                <button className="btnPokedex">Adicione {name} ao seu Pokedex!</button>
+            </div>
+            <div className="btnDetalhesCont">
+            <button className="btnDetalhes" onClick={() => {navigate(`/Detalhes/${pokemon.id}`)}}>Detalhes</button>
             </div>
         </div>
     )
