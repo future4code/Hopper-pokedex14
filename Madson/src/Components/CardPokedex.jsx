@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Card.css"
+import "./CardPokedex.css"
 import { GlobalContext } from "../Global/GlobalContext";
 import { useContext } from "react";
 
@@ -18,7 +18,6 @@ const Card = (props) => {
     const [name, setName] = useState("")
 
     const url = props.url
-    const nome = props.nome
     const index = props.index
 
     const formataNome = () => {
@@ -29,13 +28,7 @@ const Card = (props) => {
     }
 
     const onClickPokedex = () => {
-        let temp = pokedex;
-        let novaPokedex = [...temp, {nome, url}]
-
-        let pokeTemp = pokemons;
-        let novaPokemons = pokeTemp.splice(index, 1)
-
-        setPokedex(novaPokedex)
+        setPokedex(url)
         console.log(pokedex);
     }
 
@@ -56,7 +49,7 @@ const Card = (props) => {
                 <img src={img} className="img"/>
             </div>
             <div className="btnPokedexCont">
-                <button className="btnPokedex" onClick={() => {onClickPokedex()}}>Adicione {name} ao seu Pokedex!</button>
+                <button className="btnPokedex">Remova {name} do seu Pokedex!</button>
             </div>
             <div className="btnDetalhesCont">
             <button className="btnDetalhes" onClick={() => {navigate(`/Detalhes/${pokemon.id}`)}}>Detalhes</button>
