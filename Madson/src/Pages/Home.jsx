@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Header from "../Components/Header";
-import axios from "axios";
-import { useEffect } from "react";
 import Card from "../Components/Card";
 import "../Styles/Home.css"
+import { GlobalContext } from "../Global/GlobalContext";
 
 const HomePage = () => {
 
-    const [pokemons, setPokemons] = useState([])
-    
-
-    useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/")
-        .then((res) => {
-            setPokemons(res.data.results)
-        }).catch((err) => {
-            console.log(err);
-        })
-    },[])
+    const { states, setters } = useContext(GlobalContext);
+    const { pokemons, pokedex } = states
+    const { setPokemons } = setters
 
     return (
         <>
@@ -28,6 +19,7 @@ const HomePage = () => {
                     pokemons && pokemons.map((pokemon) => {
                         return (
                             <Card className="cards" key={pokemon.url}
+                            index={pokemons.indexOf(pokemon)}
                             nome={pokemon.name}
                             url={pokemon.url}
                             />
