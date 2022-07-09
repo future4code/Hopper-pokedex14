@@ -6,9 +6,8 @@ import { GlobalContext } from "../Global/GlobalContext";
 
 const HomePage = () => {
 
-    const { states, setters } = useContext(GlobalContext);
-    const { pokemons, pokedex } = states
-    const { setPokemons } = setters
+    const { states } = useContext(GlobalContext);
+    const { pokemons } = states
 
     return (
         <>
