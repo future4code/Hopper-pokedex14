@@ -10,8 +10,8 @@ const Card = (props) => {
     const navigate = useNavigate()
 
     const {setters, states} = useContext(GlobalContext);
-    const {pokemons, pokedex} = states
-    const {setPokedex} = setters;
+    const {pokedex, pokeBase, request} = states
+    const {setPokemons, setPokedex} = setters;
 
     const [pokemon, setPokemon] = useState({})
     const [img, setImg] = useState("")
@@ -27,12 +27,16 @@ const Card = (props) => {
         setName(novoNome)
     }
 
-    const onClickPokedex = () => {
-        setPokedex(url)
-        console.log(pokedex);
-    }
+    const onClickRemovePokedex = (i) => {
+        let pokes = pokedex;
+        pokes.splice(i, 1);
+        setPokedex(pokes);
+        let filteredPokemons = pokeBase.filter(pokemon => !pokes.find(pokedex => pokedex.nome === pokemon.name));
+        setPokemons(filteredPokemons)   
+        }
 
     useEffect(() => {
+        
         axios.get(url).then((res) => {
             setPokemon(res.data)
             setImg(res.data.sprites.front_default)
@@ -40,16 +44,16 @@ const Card = (props) => {
         }).catch((err) => {
             console.log(err);
         })
-    },[])
+    },[request])
 
     return (
         <div className="card">
             <p className="nomePokemon">{name}</p>
             <div className="imgContainer">
-                <img src={img} className="img"/>
+                <img src={img} className="img" alt={name}/>
             </div>
             <div className="btnPokedexCont">
-                <button className="btnPokedex">Remova {name} do seu Pokedex!</button>
+                <button className="btnPokedex" onClick={() => {onClickRemovePokedex(index)}}>Remova {name} do seu Pokedex!</button>
             </div>
             <div className="btnDetalhesCont">
             <button className="btnDetalhes" onClick={() => {navigate(`/Detalhes/${pokemon.id}`)}}>Detalhes</button>

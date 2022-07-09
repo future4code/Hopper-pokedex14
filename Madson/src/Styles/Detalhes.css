@@ -1,0 +1,47 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px;
+    margin-top: 10px;
+}
+
+.nome {
+    font-size: 3em;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.pageContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.imgContent {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    gap: 20px;
+}
+
+.imgQuadro {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgDetalhes {
+    height: 400px;
+    width: 400px;
+}
