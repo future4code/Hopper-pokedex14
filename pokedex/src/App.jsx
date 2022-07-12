@@ -1,11 +1,12 @@
 import './App.css';
 import Rotas from './Components/Rotas';
+import { GlobalState } from './Global/GlobalState';
 
 function App() {
   return (
-    <div className="App">
+    <GlobalState>
       <Rotas/>
-    </div>
+    </GlobalState>
   );
 }
 

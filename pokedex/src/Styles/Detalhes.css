@@ -1,0 +1,170 @@
+.mainPagePokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../Img/pokemon-backgound.png);
+    background-repeat: repeat-y;
+    background-size: 100vw;
+    background-position: 0px 0px 50px;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+.headerDetalhes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.headerPokemon {
+    display: flex;
+    flex-direction: row;
+    background-image: url(../Img/pokemon-header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: 10px;
+    width: 45vw;
+    justify-content: center;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.pageContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    width: 60vw;
+    height: 40vh;
+    margin-top: 50px;
+}
+
+.imgContent {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    gap: 20px;
+}
+
+.imgQuadro {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    background-image: url(../Img/Background.jpg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imgDetalhes {
+    height: 400px;
+    width: 400px;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnVoltar {
+    background-image: url(../Img/pokemon-button.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btnRemover {
+    background-image: url(../Img/pokemon-button-remover.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 380px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.btnRemover:hover {
+    background-image: url(../Img/pokemon-button-pokedex.png);
+}
+
+.btnAdicionar {
+    background-image: url(../Img/pokemon-button-pokedex.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 380px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.btnAdicionar:hover {
+    background-image: url(../Img/pokemon-button-remover.png);
+}
+
+.stat {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(8, 8, 186);
+    color: white;
+    height: 20px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.statTytle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(47, 47, 67);
+    color: white;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+}

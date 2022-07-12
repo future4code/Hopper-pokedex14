@@ -1,33 +1,30 @@
-import React, { useState } from "react";
-import Header from "../Components/Header";
-import axios from "axios";
-import { useEffect } from "react";
+
+import React, { useContext } from "react";
 import Card from "../Components/Card";
 import "../Styles/Home.css"
+import { GlobalContext } from "../Global/GlobalContext";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
 
-    const [pokemons, setPokemons] = useState([])
-    
+    const navigate = useNavigate()
 
-    useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/")
-        .then((res) => {
-            setPokemons(res.data.results)
-        }).catch((err) => {
-            console.log(err);
-        })
-    },[])
+    const { states } = useContext(GlobalContext);
+    const { pokemons } = states
 
     return (
-        <>
-            <Header/>
-            <h1>Home</h1>
+        <div className="mainPage">
+
+            <div className="headerHome" onClick={() => {navigate("/Pokedex")}}>
+                <h1 className="titulo">Pokédex</h1>
+            </div>         
+            
             <div className="cards-container">
                 {
                     pokemons && pokemons.map((pokemon) => {
                         return (
                             <Card className="cards" key={pokemon.url}
+                            index={pokemons.indexOf(pokemon)}
                             nome={pokemon.name}
                             url={pokemon.url}
                             />
@@ -35,7 +32,9 @@ const HomePage = () => {
                     })
                 }
             </div>    
-        </>
+
+        </div>
+
     )
 }
 export default HomePage;

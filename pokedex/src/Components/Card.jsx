@@ -11,7 +11,8 @@ const Card = (props) => {
 
     const {setters, states} = useContext(GlobalContext);
     const {pokemons, pokedex} = states
-    const {setPokedex} = setters;
+    const {setPokedex, setPokemons} = setters;
+
 
     const [pokemon, setPokemon] = useState({})
     const [img, setImg] = useState("")
@@ -19,7 +20,6 @@ const Card = (props) => {
 
     const url = props.url
     const nome = props.nome
-    const index = props.index
 
     const formataNome = () => {
         let nome = props.nome
@@ -29,14 +29,12 @@ const Card = (props) => {
     }
 
     const onClickPokedex = () => {
-        let temp = pokedex;
-        let novaPokedex = [...temp, {nome, url}]
+        let pokes = pokemons
+        let novaPokedex = [...pokedex, {nome, url}]
+        setPokedex(novaPokedex);
+        let filteredPokemons = pokes.filter(pokemon => !novaPokedex.find(pokedex => pokedex.nome === pokemon.name))
+        setPokemons(filteredPokemons);
 
-        let pokeTemp = pokemons;
-        let novaPokemons = pokeTemp.splice(index, 1)
-
-        setPokedex(novaPokedex)
-        console.log(pokedex);
     }
 
     useEffect(() => {
@@ -53,7 +51,8 @@ const Card = (props) => {
         <div className="card">
             <p className="nomePokemon">{name}</p>
             <div className="imgContainer">
-                <img src={img} className="img"/>
+                <img src={img} className="img" alt={name}/>
+
             </div>
             <div className="btnPokedexCont">
                 <button className="btnPokedex" onClick={() => {onClickPokedex()}}>Adicione {name} ao seu Pokedex!</button>
