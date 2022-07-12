@@ -1,0 +1,45 @@
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../Img/pokedex-background.png);
+    background-repeat: repeat-y;
+    background-size: 100vw;
+    background-position: 0px 0px 50px;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.headerHome {
+    display: flex;
+    flex-direction: row;
+    background-image: url(../Img/pokedex-header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+    width: 45vw;
+    justify-content: center;
+    transition: 150ms;
+}
+
+.headerHome:hover {
+    background-image: url(../Img/pokedex-header2.png);
+}
+
+.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 80vw;
+    margin: 50px;
+}
+
+.btnMinhaPokedex {}

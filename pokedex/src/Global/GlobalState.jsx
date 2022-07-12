@@ -19,6 +19,7 @@ export const GlobalState = (props) => {
         axios.get("https://pokeapi.co/api/v2/pokemon/")
         .then((res) => {
             let resp = res.data.results;
+            console.log(resp);
             setPokemons(resp)
             setPokeBase(resp)
         }).catch((err) => {
