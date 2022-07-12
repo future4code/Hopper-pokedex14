@@ -1,3 +1,4 @@
+
 .mainPage {
     display: flex;
     flex-direction: column;
@@ -33,13 +34,14 @@
     cursor: pointer;
 }
 
+
 .cards-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     gap: 30px;
     width: 80vw;
     margin: 50px;
 }
 
-.btnMinhaPokedex {}

@@ -5,6 +5,7 @@ import "../Styles/Detalhes.css"
 import { GlobalContext } from "../Global/GlobalContext";
 
 
+
 const Detalhes = () => {
 
     const navigate = useNavigate()
@@ -64,6 +65,7 @@ const Detalhes = () => {
     }
     
         
+
     return (
         <div className="mainPagePokemon">
             <div className="mainContainer">

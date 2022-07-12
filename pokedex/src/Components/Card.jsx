@@ -13,6 +13,7 @@ const Card = (props) => {
     const {pokemons, pokedex} = states
     const {setPokedex, setPokemons} = setters;
 
+
     const [pokemon, setPokemon] = useState({})
     const [img, setImg] = useState("")
     const [name, setName] = useState("")
@@ -33,6 +34,7 @@ const Card = (props) => {
         setPokedex(novaPokedex);
         let filteredPokemons = pokes.filter(pokemon => !novaPokedex.find(pokedex => pokedex.nome === pokemon.name))
         setPokemons(filteredPokemons);
+
     }
 
     useEffect(() => {
@@ -50,6 +52,7 @@ const Card = (props) => {
             <p className="nomePokemon">{name}</p>
             <div className="imgContainer">
                 <img src={img} className="img" alt={name}/>
+
             </div>
             <div className="btnPokedexCont">
                 <button className="btnPokedex" onClick={() => {onClickPokedex()}}>Adicione {name} ao seu Pokedex!</button>

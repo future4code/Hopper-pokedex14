@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import Card from "../Components/Card";
 import "../Styles/Home.css"
@@ -31,7 +32,9 @@ const HomePage = () => {
                     })
                 }
             </div>    
+
         </div>
+
     )
 }
 export default HomePage;
