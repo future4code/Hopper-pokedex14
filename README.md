@@ -1,16 +1,14 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+ - Madson Ribas Pereira
+ - Leandro Apolinário Leite
+ - Rafael Santos Beserra
 
-Link do Surge: www.link.com.br
+Link do Surge: http://deadpan-milk.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
-
-O que não funciona: 
-- Item 3
-- Item 4
+ - O usuário pode escolher entre diversos pokemons qual ele quer adicionar à sua pokédex;
+ - Pode remover os pokemons da sua Pokédex;
+ - Pode acessar uma página com detalhes dos pokemons;
+ - Pode adicionar ou remover o pokemon à sua pokédex diretamente da página de detalhes.

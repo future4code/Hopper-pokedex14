@@ -1,0 +1,84 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 360px;
+    background-color: rgb(247, 223, 223);
+    padding: 15px;
+    border-radius: 15px;
+    background-image: url(../Img/Card2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    align-items: center;
+    transition: 150ms;
+    scale: 100%;
+}
+
+.card:hover {
+    transform: translate3d(3px, -16px, 50px) rotateX(-2deg) rotateZ(-2deg) scale(1.08);
+    box-shadow: -20px 30px 500px rgba(0, 0, 0, 0.355);
+}
+
+.imgContainer {
+    background-image: url(../Img/Background.jpg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: bottom;
+    width: 230px;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img {
+    border-radius: 5px;
+    width: 80%;
+}
+
+.nomePokemon {
+    font-size: 1.1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 30px;
+}
+
+.btnPokedexCont {
+    height: 100px;
+    width: 230px;
+}
+
+.btnPokedex {
+    border: none;
+    background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 100px;
+    margin-top: 10px;
+}
+
+
+
+.btnDetalhesCont {
+    height: 50px;
+    width: 230px;
+    transition: 150ms;
+}
+
+.btnDetalhes {
+    border: none;
+    background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin-left: 115px;
+    margin-top: 38px;
+}
